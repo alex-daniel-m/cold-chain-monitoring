@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cold-chain-monitoring.innosk.com/sitemap-index.xml

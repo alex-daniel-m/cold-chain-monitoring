@@ -1,0 +1,64 @@
+/**
+ *
+ * Mobile Nav
+ *
+ */
+
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    transition: all 0.3s ease;
+    height: 60px;
+    background-color: var(--neutral-950);
+    border-bottom: 1px solid var(--neutral-900);
+    z-index: 1000;
+    /* */
+    will-change: transform; 
+    transform: translateZ(0);
+}
+
+@media (min-width: 1024px){
+    .mobile-nav{
+        display: none;
+    }
+}
+
+.mobile-nav__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.mobile-nav__layout{
+    color: var(--neutral-950);
+}
+
+.mobile-nav__logo{
+    display: flex;
+    flex-direction: row;
+}
+
+.mobile-nav__logo a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--white);
+    width: 100px;
+    height: 100%; /* Obliga al link a llenar los 60px de la barra */
+    min-height: 20px; /* Seguridad para motores antiguos */
+}
+
+.mobile-nav__logo svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Blindaje de color para mobile */
+    fill: currentColor !important; 
+    color: #ffffff !important; /* Forza el blanco directamente si var(--white) falla */
+}

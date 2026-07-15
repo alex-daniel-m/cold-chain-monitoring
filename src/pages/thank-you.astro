@@ -1,0 +1,117 @@
+---
+// styles
+import '@styles/screen.css';
+import './index.css';
+import './thank-you.css';
+
+// components
+import Nav from '@components/Nav';
+import MainNav from '@components/MainNav';
+import Footer from '@components/Footer';
+
+// environment
+const url = import.meta.env.PUBLIC_SITE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preload" href="/fonts/inter-roman.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/eb-garamond-roman.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/eb-garamond-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Common -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="United States" />
+    <meta name="language" content="en" />
+    <meta http-equiv="content-language" content="en-US" />
+
+    <!-- Canonical -->
+	<link rel="canonical" href={url} />
+
+    <!-- Robots -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Astro -->
+    <meta name="generator" content={Astro.generator} />
+</head>
+<body class="layout">
+
+    <!-- Navigation -->
+	<Nav />
+    
+    <main class="landing">
+
+        <!-- Navigation -->
+		<MainNav />
+
+        <!-- Landing Content -->
+        <div class="landing__content">
+
+            <!-- Landing Thankyou -->
+            <section class="landing__thankyou">
+                <div class="landing__thankyou-content">
+                    <h1 class="thankyou-title h1">
+                        <span>Thank you!</span> Your request for early access is confirmed.
+                    </h1>
+                    <p class="thankyou-description ph1">
+                        Our team is reviewing your facility's profile. We’ll reach out within 24 hours to schedule your 15-minute specialized demo and discuss your FSMA compliance goals.
+                    </p>
+                    <h2 class="thankyou-subtitle h2">
+                        What to expect next
+                    </h2>
+                    <div class="thankyou-whattoexpect">
+                        <div class="thankyou-steps">
+                            <span class="thankyou__step-title">
+                                Step 1
+                            </span>
+                            <p class="thankyou__step-description ph3">
+                                You will receive a calendar invite from an Innosk compliance architect.
+                            </p>
+                        </div>
+                        <div class="thankyou-steps">
+                            <span class="thankyou__step-title">
+                                Step 2
+                            </span>
+                            <p class="thankyou__step-description ph3">
+                                We&rsquo;ll perform a quick assessment of your existing hardware compatibility (MQTT/Sensors).
+                            </p>
+                        </div>
+                        <div class="thankyou-steps">
+                            <span class="thankyou__step-title">
+                                Step 3
+                            </span>
+                            <p class="thankyou__step-description ph3">
+                                Get your personalized FDA compliance dashboard live in under 5 minutes.
+                            </p>
+                        </div>
+                    </div>
+                    <a 
+                        class="thankyou__backtohome"
+                        href="/"
+                    >
+                        Back to Home
+                    </a>
+                </div>
+            </section>
+
+            <!-- Landing Footer -->
+			<Footer />
+
+        </div>
+
+    </main>
+
+</body>
+</html>

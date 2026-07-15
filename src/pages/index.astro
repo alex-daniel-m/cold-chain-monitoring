@@ -1,0 +1,1331 @@
+---
+// styles
+import '@styles/screen.css';
+import './index.css';
+// components
+import Nav from '@components/Nav';
+import MainNav from '@components/MainNav';
+import Footer from '@components/Footer';
+// Images
+import { Image } from 'astro:assets';
+// Images -- what we do
+import imgNote from '@assets/note.webp';
+import imgSecurity from '@assets/security.webp';
+import imgChain from '@assets/chain.webp';
+import imgAlert from '@assets/alert.webp';
+import imgWarehouse from '@assets/warehouse.webp';
+import imgSetup from '@assets/setup.webp';
+// Image -- compliance
+import imgCheck from '@assets/cold-chain-compliance-verification.webp';
+import imgLocked from '@assets/secure-temperature-data-encryption.webp';
+import imgCloud from '@assets/cloud-based-cold-chain-software-platform.webp';
+import imgSheet from '@assets/automated-cold-chain-temperature-monitoring-chart.webp';
+import imgTime from '@assets/real-time-cold-storage-monitoring-system.webp';
+// Images -- use cases
+import imgWalkInCoolerComplianceSoftware from '@assets/walk-in-cooler-compliance-software.webp';
+import imgColdChainMonitoring from '@assets/cold-chain-logistics-monitoring-tools.webp';
+import imgColdStorageWarehouseMonitoringSoftware from '@assets/cold-storage-warehouse-monitoring-system.webp';
+import imgCheckLine from '@assets/checkline.webp';
+// Images -- how it works
+import imgOne from '@assets/1-one.webp';
+import imgTwo from '@assets/2-two.webp';
+import imgThree from '@assets/3-three.webp';
+// Images -- who we are
+import imgFdaComplianceDashboard from '@assets/fda-compliance-cold-chain-software-ui.webp';
+import imgRemoteTemperatureMonitoring from '@assets/remote-temperature-monitoring.webp';
+import imgScalableCloudInfraestructure from '@assets/scalable-cold-chain-monitoring-infrastructure.webp';
+// Image -- common
+import imgArrow from '@assets/arrow.webp';
+
+// environment
+const url = import.meta.env.PUBLIC_SITE_URL;
+const scriptUI = import.meta.env.PUBLIC_SCRIPT_UI;
+const scriptDataId = import.meta.env.PUBLIC_SCRIPT_DATA_ID;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<!-- Manifest -->
+		<link rel="manifest" href="/site.webmanifest">
+
+		<!-- Fonts -->
+		<link rel="preload" href="/fonts/inter-roman.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/eb-garamond-roman.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href="/fonts/eb-garamond-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+		<!-- Common -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="geo.region" content="US" />
+		<meta name="geo.placename" content="United States" />
+		<meta name="language" content="en" />
+        <meta http-equiv="content-language" content="en-US" />
+
+		<!-- OG -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url}>
+		<meta property="og:title" content="Innosk | Cold Chain Monitoring Solution" />
+		<meta property="og:description" content="Universal cold chain monitoring software. Turn your existing hardware into an FDA compliance dashboard by simply scanning a QR code. Seamless FSMA reporting for food SMEs." />
+		<meta property="og:image" content={`${url}og-image.png`}>
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		
+		<!-- X -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content={url}>
+		<meta property="twitter:title" content="Innosk | Cold Chain Monitoring Solution">
+		<meta property="twitter:description" content="Universal cold chain monitoring software. Turn your existing hardware into an FDA compliance dashboard by simply scanning a QR code. Seamless FSMA reporting for food SMEs.">
+		<meta property="twitter:image" content={`${url}og-image.png`}>
+
+		<!-- Canonical -->
+		<link rel="canonical" href={url} />
+
+		<!-- Meta title, description and kewords -->
+		<title>Innosk | Cold Chain Monitoring Solution</title>
+		<meta name="title" content="Cold Chain Monitoring Software | FDA & FSMA Compliance"/>
+		<meta name="description" content="Universal cold chain monitoring software. Turn your existing hardware into an FDA compliance dashboard by simply scanning a QR code. Seamless FSMA reporting for food SMEs." />
+		<meta name="keywords" content="cold chain monitoring, remote temperature monitoring, Cold chain monitoring tools, Cold chain temperature monitoring chart, cold chain software, Cold storage monitoring system, Cold chain monitoring software, Cold chain monitoring methods" />
+
+		<!-- Robots -->
+        <meta name="robots" content="index, follow" />
+
+		<!-- Astro -->
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- UI Functinalities 
+		<script src={scriptUI} data-id={scriptDataId} defer></script>
+		-->
+		
+		<!-- JSON-LD -->
+		<script type="application/ld+json">
+			[
+				{
+					"@context": "https://schema.org",
+					"@type": "SoftwareApplication",
+					"name": "Innosk | Cold Chain Monitoring Solution",
+					"description": "Universal cold chain monitoring software. Turn your existing hardware into an FDA compliance dashboard by simply scanning a QR code. Seamless FSMA reporting for food SMEs.",
+					"operatingSystem": "Web-Based / Cloud",
+					"applicationCategory": "BusinessApplication, HealthApplication",
+					"featureList": "Universal sensor pairing via QR-code, Real-time alerts, Automated FDA logs, FSMA 204 audit-ready reports",
+					"keywords": "remote temperature monitoring, fda compliance dashboard, fsma compliance software, cold chain monitoring, cold storage software",
+					"aggregateRating": {
+						"@type": "AggregateRating",
+						"ratingValue": "4.9",
+						"reviewCount": "24"
+					},
+					"offers": {
+						"@type": "Offer",
+						"price": "0.00",
+						"priceCurrency": "USD",
+						"availability": "https://schema.org/InStock",
+						"description": "Request Early Access for Cold Chain Software"
+					}
+				},
+				{
+					"@context": "https://schema.org",
+					"@type": "Organization",
+					"name": "Innosk",
+					"url": "https://cold-chain-monitoring.innosk.com",
+					"logo": "https://cold-chain-monitoring.innosk.com/logo.png",
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"contactType": "customer support",
+						"areaServed": "US",
+						"availableLanguage": "en"
+					}
+				},
+				{
+					"@context": "https://schema.org",
+					"@type": "FAQPage",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "What is cold chain monitoring?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Cold chain monitoring is the continuous, real-time tracking of temperature-sensitive products during storage and transport to ensure safety and regulatory compliance. It uses IoT sensors and cold chain monitoring software to prevent spoilage and maintain FSMA compliance."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "How can I monitor cold chain performance?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "The most effective way to monitor cold chain performance is by using a hardware-agnostic cold storage monitoring system. This allows you to sync existing sensors via MQTT to an automated dashboard, generating real-time cold chain temperature monitoring charts."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "How is temperature monitored in cold chains?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Temperature is monitored using remote temperature monitoring tools such as digital data loggers and IoT sensors. These devices transmit data to a centralized cold chain software, eliminating the need for manual logs and ensuring FDA-ready reports."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "What is an example of a cold chain technology?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "A primary example of cold chain technology is a cloud-based cold chain system that integrates MQTT-enabled sensors with automated reporting software to maintain 24/7 visibility and meet FSMA food safety requirements."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "How does your remote temperature monitoring help with FDA compliance?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Innosk provides a real-time FDA compliance dashboard that automates temperature logs, eliminating manual errors and ensuring your cold chain monitoring is audit-ready 24/7."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Is this software compatible with FSMA compliance requirements?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Yes, our FSMA compliance software is specifically designed to meet food safety standards, providing automated reports and warehouse temperature mapping for full traceability."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "How do I link my existing sensors to Innosk?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Innosk is a software-first solution. You can sync your existing compatible sensors to your FDA compliance dashboard in seconds by simply scanning the QR code on your device."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Does Innosk provide the hardware or just the software?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "We provide the cloud-based monitoring software and compliance dashboard. Our platform is designed to be plug-and-play with your hardware; just scan the QR code to start automating your FSMA temperature logs immediately."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Is there any manual configuration required for the sensors?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "No. Our 'Scan-to-Sync' technology eliminates manual setup. Once you scan the QR code, your sensors are automatically linked to our cold chain monitoring software, making it 100% plug-and-play."
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "Does Innosk support warehouse temperature mapping?",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Yes, our cold chain software includes features for warehouse temperature mapping to identify hot spots and maintain consistent climate control across large facilities."
+							}
+						}
+					]
+				}
+			]
+		</script>
+	</head>
+	<body class="layout">
+
+		<!-- Navigation -->
+		<Nav />
+
+		<main class="landing">
+
+			<!-- Navigation -->
+			<MainNav />
+
+			<!-- Landing Content -->
+			<div class="landing__content">
+
+				<!-- Landing Hero -->
+				<header class="landing__hero" id="welcome"> 
+					<div class="landing__hero-content">
+						<p class="landing__hero-anchor">
+							welcome
+						</p>
+						<h1 class="landing__hero-title h1">
+							<span class="pink400">Cold Chain Monitoring</span> Software &amp; <span class="newline-49fd">Compliance Dashboard</span>
+						</h1>
+						<p class="landing__hero-description ph1">
+							The simplest way for food SMEs to automate <span class="pink300">cold storage monitoring systems</span>. Pair your existing sensors via MQTT and generate audit-ready <span class="pink300">cold chain temperature monitoring charts</span> for FSMA & FDA compliance.
+						</p>
+						<a 
+							href="#get-in-touch"
+							class="landing__hero-cta"
+						>
+							Get a 15-min Demo
+						</a>
+					</div>
+					<div class="landing__hero-stat">
+						<div class="landing__hero-item">
+							<p>24/7</p>
+							<span>Real-time alerts</span>
+						</div>
+						<div class="landing__hero-item">
+							<p>&lt;5 min</p>
+							<span>Setup time</span>
+						</div>
+						<div class="landing__hero-item">
+							<p>FSMA</p>
+							<span>Audit-ready reports</span>
+						</div>
+						<div class="landing__hero-item">
+							<p>FDA</p>
+							<span>Compliance dashboards</span>
+						</div>
+					</div>
+				</header>
+
+				<!-- Landing Compliance -->
+				<section class="landing__compliance">
+					<h2 class="landing__compliance-title">
+						built for compliance-driven industries
+					</h2>
+					<div class="landing__compliance-content">
+						<div class="landing__compliance-item">
+							<Image 
+								src={imgCheck}
+								alt="Verified cold chain monitoring compliance for FDA and FSMA standards."
+								quality="max"
+								format="webp"
+							/>
+							<span>FSMA 204 Ready</span>
+						</div>
+						<div class="landing__compliance-item">
+							<Image 
+								src={imgLocked}
+								alt="Secure and encrypted remote temperature monitoring data storage."
+								quality="max"
+								format="webp"
+							/>
+							<span>FDA Compliance Dashboard</span>
+						</div>
+						<div class="landing__compliance-item">
+							<Image 
+								src={imgCloud}
+								alt="Cloud-based cold chain software for real-time global access."
+								quality="max"
+								format="webp"
+							/>
+							<span>Cloud IoT Sensors</span>
+						</div>
+						<div class="landing__compliance-item">
+							<Image 
+								src={imgSheet}
+								alt="Automated cold chain temperature monitoring chart and digital logs."
+								quality="max"
+								format="webp"
+							/>
+							<span>Automated Audit Reports</span>
+						</div>
+						<div class="landing__compliance-item">
+							<Image 
+								src={imgTime}
+								alt="Real-time cold storage monitoring system with 24/7 automated alerts."
+								quality="max"
+								format="webp"
+							/>
+							<span>Real-time Alerts</span>
+						</div>
+					</div>
+				</section>
+
+				<!-- Landing What We Do -->
+				<section class="landing__whatwedo" id="what-we-do">
+					<div class="landing__whatwedo-intro reveal-section">
+						<p class="landing__whatwedo-anchor pink300">
+							what we do
+						</p>
+						<h2 class="landing__whatwedo-title h2">
+							Manual logs are costing you time, money &amp; compliance.
+						</h2>
+						<p class="landing__whatwedo-description ph2">
+							Stop doing manual temperature logs. Our FDA compliance dashboard automates your food traceability, giving you audit-ready reports in one click.
+						</p>
+					</div>
+					<div class="landing__whatwedo-cards reveal-section">
+						<article class="landing__whatwedo-card">
+							<Image 
+								src={imgNote}
+								alt="Automated cold chain temperature monitoring chart for FDA compliance"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Stop Manual Logs Forever
+							</h3>
+							<p class="ph3">
+								Eliminate paper logs and spreadsheets. Our IoT sensors capture temperature and humidity data automatically, 24/7, with 1-minute granularity.
+							</p>
+						</article>
+						<article class="landing__whatwedo-card">
+							<Image 
+								src={imgSecurity}
+								alt="Secure cold chain software ensuring data integrity for FSMA regulations"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								FDA Compliance Dashboard
+							</h3>
+							<p class="ph3">
+								Our FSMA compliance software keeps every data point audit-ready. Pass FDA inspections with one-click report exports — no scrambling.
+							</p>
+						</article>
+						<article class="landing__whatwedo-card">
+							<Image 
+								src={imgChain}
+								alt="End-to-end cold chain monitoring tools for food logistics"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								End-to-End Food Traceability
+							</h3>
+							<p class="ph3">
+								Connect your cold chain from dock to delivery. Our food traceability software gives every stakeholder visibility in real time — no guesswork.
+							</p>
+						</article>
+						<article class="landing__whatwedo-card">
+							<Image 
+								src={imgAlert}
+								alt="Real-time alerts for remote temperature monitoring systems"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Instant Alerts, Zero Loss
+							</h3>
+							<p class="ph3">
+								Get SMS and email alerts the moment a sensor exceeds your threshold. Stop inventory loss before it happens — even at 3 AM.
+							</p>
+						</article>
+						<article class="landing__whatwedo-card">
+							<Image 
+								src={imgWarehouse}
+								alt="Cold storage monitoring system for food SMEs and warehouses"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Warehouse Temperature Mapping
+							</h3>
+							<p class="ph3">
+								Identify hot and cold spots across your entire facility. Professional warehouse temperature mapping used to cost thousands. Now it ships with your subscription.
+							</p>
+						</article>
+						<article class="landing__whatwedo-card">
+							<Image 
+								src={imgSetup}
+								alt="Easy setup for cold chain monitoring methods using existing hardware"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Setup in Under 5 Minutes
+							</h3>
+							<p class="ph3">
+								Plug in your sensor, scan the QR code, and your dashboard is live. No IT team needed. No complex integrations. Just results.
+							</p>
+						</article>
+					</div>
+				</section>
+
+				<!-- Landing Use Cases -->
+				<section class="landing__usecases" id="use-cases">
+					<div class="landing__usecases-intro reveal-section">
+						<p class="landing__usecases-anchor pink300">
+							use cases
+						</p>
+						<h2 class="landing__usecases-title h2">
+							Built for every link in the cold chain.
+						</h2>
+						<p class="landing__usecases-description ph2">
+							Whether you manage a single warehouse or a multi-site distribution network, Innosk adapts to your operation in minutes.
+						</p>
+					</div>
+					<div class="landing__usecases-cards">
+						<article class="landing__usecases-card">
+							<div class="landing__usecases-card-img">
+								<Image 
+									src={imgWalkInCoolerComplianceSoftware}
+									alt="alk-in cooler temperature monitoring and compliance software for food safety."
+									quality="max"
+									format="webp"
+									class="reveal-img"
+								/>
+							</div>
+							<div class="landing__usecases-card-content reveal-right">
+								<h3 class="h3">
+									Keep Every Fridge Compliant, Automatically
+								</h3>
+								<p class="ph3">
+									Replace manual temperature checklists with automated monitoring for every walk-in cooler, reach-in fridge, and freezer in your central kitchen or restaurant. Zero paper, zero risk.
+								</p>
+								<ul>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Replaces paper temp logs
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Health inspection ready
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Drag & drop sensor setup
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Staff alert notifications
+										</span>
+									</li>
+								</ul>
+							</div>
+						</article>
+						<article class="landing__usecases-card">
+							<div class="landing__usecases-card-img">
+								<Image 
+									src={imgColdChainMonitoring}
+									alt="Real-time cold chain monitoring tools for refrigerated transport and logistics."
+									quality="max"
+									format="webp"
+									class="reveal-img"
+								/>
+							</div>
+							<div class="landing__usecases-card-content reveal-right">
+								<h3 class="h3">
+									End-to-End Cold Chain Monitoring Software
+								</h3>
+								<p class="ph3">
+									Ensure food safety from dock to delivery with our cold storage monitoring platform. Track every shipment and get instant visibility across your entire distribution network.
+								</p>
+								<ul>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											In-transit temperature logging
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Multi-location dashboard
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Food traceability software built-in
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt=""
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Customer-facing compliance reports
+										</span>
+									</li>
+								</ul>
+							</div>
+						</article>
+						<article class="landing__usecases-card">
+							<div class="landing__usecases-card-img">
+								<Image 
+									src={imgColdStorageWarehouseMonitoringSoftware}
+									alt="Automated cold storage monitoring system for large scale food warehouses"
+									quality="max"
+									format="webp"
+									class="reveal-img"
+								/>
+							</div>
+							<div class="landing__usecases-card-content reveal-right">
+								<h3 class="h3">
+									Warehouse Temperature Mapping Made Easy
+								</h3>
+								<p class="ph3">
+									Deploy sensors across every zone of your cold storage facility. Get a live remote temperature monitoring map and automated alerts before product integrity is compromised.
+								</p>
+								<ul>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Multi-zone sensor coverage
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											FSMA-compliant historical logs
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											One-click FDA audit export
+										</span>
+									</li>
+									<li class="landing__usecases-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											SMS + email threshold alerts
+										</span>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Landing How it Works -->
+				<section class="landing__howitworks" id="how-it-works">
+					<div class="landing__howitworks-intro reveal-section">
+						<p class="landing__howitworks-anchor pink300">
+							how it works
+						</p>
+						<h2 class="landing__howitworks-title h2">
+							3 Steps to Total Compliance
+						</h2>
+						<p class="landing__howitworks-description ph2">
+							Transform your facility's safety standards without the technical headache. Our cold storage monitoring platform streamlines the transition from outdated paper records to a fully automated FDA compliance dashboard. We’ve simplified the path to food traceability, ensuring every data point is captured and ready to be exported as professional, audit-ready PDF reports for your next FSMA compliance software inspection.
+						</p>
+					</div>
+					<div class="landing__howitworks-cards reveal-section">
+						<article class="landing__howitworks-card">
+							<Image 
+								src={imgOne}
+								alt="Feature one"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Register Your Facility
+							</h3>
+							<p class="ph3">
+								Set up your secure profile in seconds. Our cloud-based platform is designed for food SMEs to start their remote temperature monitoring journey without complex IT installations.
+							</p>
+						</article>
+						<article class="landing__howitworks-card">
+							<Image 
+								src={imgTwo}
+								alt="Feature two"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Sync Your Sensors via QR Code
+							</h3>
+							<p class="ph3">
+								No manual configuration needed. Simply generate and scan a unique QR code to link your existing hardware to your FDA compliance dashboard instantly.
+							</p>
+						</article>
+						<article class="landing__howitworks-card">
+							<Image 
+								src={imgThree}
+								alt="Feature three"
+								quality="max"
+								format="webp"
+							/>
+							<h3 class="h3">
+								Monitor & Export Compliance Reports
+							</h3>
+							<p class="ph3">
+								Log in to view your real-time cold chain monitoring data. Generate FSMA compliance software reports and warehouse temperature mapping insights with a single click.
+							</p>
+						</article>
+					</div>
+				</section>
+
+				<!-- Landing Who We Are -->
+				<section class="landing__whoweare" id="who-we-are">
+					<div class="landing__whoweare-intro reveal-section">
+						<p class="landing__whoweare-anchor pink300">
+							who we are
+						</p>
+						<h2 class="landing__whoweare-title h2">
+							The Engineering Behind the Compliance.
+						</h2>
+						<p class="landing__whoweare-description ph2">
+							Expertise in high-precision IoT architectures.
+						</p>
+					</div>
+					<div class="landing__whoweare-cards">
+						<article class="landing__whoweare-card">
+							<div class="landing__whoweare-card-img">
+								<Image 
+									src={imgFdaComplianceDashboard}
+									alt="Innosk software interface showing automated FDA compliance charts for temperature monitoring."
+									quality="max"
+									format="webp"
+									class="reveal-img"
+								/>
+							</div>
+							<div class="landing__whoweare-card-content reveal-right">
+								<h3 class="h3">
+									Advanced Compliance Dashboards
+								</h3>
+								<p class="ph3">
+									Beyond simple graphs, we develop specialized reporting interfaces. We transform raw sensor data into audit-ready visualizations that allow FDA inspectors to verify your FSMA compliance in seconds.
+								</p>
+								<ul>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Grafana
+										</span>
+									</li>
+								</ul>
+							</div>
+						</article>
+						<article class="landing__whoweare-card">
+							<div class="landing__whoweare-card-img">
+								<Image 
+									src={imgRemoteTemperatureMonitoring}
+									alt="Real-time remote temperature monitoring system architecture for cold chain security."
+									quality="max"
+									format="webp"
+									class="reveal-img"
+								/>
+							</div>
+							<div class="landing__whoweare-card-content reveal-right">
+								<h3 class="h3">
+									MQTT & Real-Time Messaging
+								</h3>
+								<p class="ph3">
+									We build on top of high-performance MQTT protocols to ensure sub-second latency. Our asynchronous architecture guarantees that your temperature data is delivered and logged even in unstable network conditions.
+								</p>
+								<ul>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											MQTT Broker
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Mosquitto
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											EMQX
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Event-Driven Architecture
+										</span>
+									</li>
+								</ul>
+							</div>
+						</article>
+						<article class="landing__whoweare-card">
+							<div class="landing__whoweare-card-img">
+								<Image 
+									src={imgScalableCloudInfraestructure}
+									alt="Scalable cloud infrastructure supporting global cold chain monitoring methods and MQTT protocols."
+									quality="max"
+									format="webp"
+									class="reveal-img"
+								/>
+							</div>
+							<div class="landing__whoweare-card-content reveal-right">
+								<h3 class="h3">
+									Scalable Cloud Infrastructure
+								</h3>
+								<p class="ph3">
+									Our platform is engineered for scale. Whether you are monitoring a single pharmacy fridge or a global distribution network, our cloud infrastructure handles millions of data points with enterprise-grade reliability.
+								</p>
+														<ul>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											AWS
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Linode
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Linux
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											Microservices
+										</span>
+									</li>
+									<li class="landing__whoweare-skill">
+										<Image
+											src={imgCheckLine}
+											alt="Feature verified"
+											quality="max"
+											format="webp"
+										/>
+										<span>
+											NestJS
+										</span>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Landing Get in Touch -->
+				<section class="landing__getintouch" id="get-in-touch">
+					<div class="landing__getintouch-container reveal-section">
+						<p class="landing__getintouch-anchor pink400">
+							get in touch
+						</p>
+						<h2 class="landing__getintouch-title h2">
+							Be the first to protect your cold chain.
+						</h2>
+						<p class="landing__getintouch-description ph2">
+							We're onboarding a limited number of food SMEs in the U.S. Fill out the form below and our team will reach out within 24 hours.
+						</p>
+						<form
+							class="form__git" 
+							id="idContactForm"
+						>
+							<div class="form__git-group">
+								<label 
+									for="name" 
+									class="required"
+								>
+									Full Name
+								</label>
+								<input 
+									id="name" 
+									name="name" 
+									type="text"
+									placeholder="Mark Johnson"
+									required 
+								/>
+							</div>
+							<div class="form__git-group">
+								<label 
+									for="email"
+									class="required"
+								>
+									Work Email
+								</label>
+								<input 
+									id="email" 
+									name="email" 
+									type="email" 
+									placeholder="mark@company.com" 
+									required 
+								/>
+								<small>
+									Please use your corporate email, not Gmail / Outlook.
+								</small>
+							</div>
+							<div class="form__git-group">
+								<label 
+									for="company"
+									class="required"
+								>
+									Company Name
+								</label>
+								<input 
+									id="company" 
+									name="company" 
+									type="text" 
+									placeholder="Quality Warehousing LLC" 
+									required 
+								/>
+							</div>
+							<div class="form__git-group">
+								<label 
+									for="industry" 
+									class="required"
+								>
+									Industry Type
+								</label>
+								<select 
+									id="industry" 
+									name="industry" 
+									required
+								>
+									<option value="">
+										Select your industry...
+									</option>
+									<option>
+										Healthcare
+									</option>
+									<option>
+										Food
+									</option>
+									<option>
+										Logistics
+									</option>
+									<option>
+										Pharma
+									</option>
+								</select>
+							</div>
+							<div class="form__git-group">
+								<label 
+									for="units" 
+									class="required">
+									Number of Units / Fridges to Monitor
+								</label>
+								<select 
+									id="units" 
+									name="units" 
+									required
+								>
+									<option value="">
+										Select a range...
+									</option>
+									<option>
+										1&#45;5
+									</option>
+									<option>
+										6&#45;20
+									</option>
+									<option>
+										21&#45;50
+									</option>
+									<option>
+										50+
+									</option>
+								</select>
+							</div>
+							<div class="form__git-group">
+								<label 
+									for="pain" 
+									class="required"
+								>
+									Current Main Pain Point
+								</label>
+								<select 
+									id="pain" 
+									name="pain" 
+									required
+								>
+									<option value="">
+										What hurts most right now...
+									</option>
+									<option>
+										No alerts
+									</option>
+									<option>
+										Manual monitoring
+									</option>
+									<option>
+										Compliance risk
+									</option>
+									<option>
+										Equipment failures
+									</option>
+								</select>
+							</div>
+							<div class="form__git-group">
+								<label for="message">
+									Message (optional)
+								</label>
+								<textarea 
+									id="message" 
+									name="message"
+									placeholder="Tell us a bit about your operation or what you're looking to solve..."
+								></textarea> <!-- en un textarea no dejar espacios para que no sean trasladados al render DOM -->
+							</div>
+							<div class="form__git-submit">
+								<button 
+									class="form__git-button"
+									type="submit"
+								>
+									Request Early Access
+								</button>
+								<small class="form__git-note">
+									No credit card required. We'll contact you within 24 hours.
+								</small>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<!-- FAQ -->
+				<section class="faq" id="faq">
+					<div class="faq__container reveal-section">
+						<p class="faq__anchor pink400">
+							faq
+						</p>
+						<h2 class="faq__title h2">
+							Frequently Asked Questions
+						</h2>
+						<h3 class="faq__subtitle h3">
+							General Insights
+						</h3>
+						<div class="faq__questions">
+							<details class="faq__item">
+								<summary class="faq__question">What is cold chain monitoring?</summary>
+								<div class="faq__answer">
+									<p>Cold chain monitoring is the continuous, real-time tracking of temperature-sensitive products during storage and transport to ensure safety and regulatory compliance. It uses IoT sensors and cold chain monitoring software to prevent spoilage and maintain FSMA compliance.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">How can I monitor cold chain performance?</summary>
+								<div class="faq__answer">
+									<p>The most effective way to monitor cold chain performance is by using a hardware-agnostic cold storage monitoring system. This allows you to sync existing sensors via MQTT to an automated dashboard, generating real-time cold chain temperature monitoring charts.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">How is temperature monitored in cold chains?</summary>
+								<div class="faq__answer">
+									<p>Temperature is monitored using remote temperature monitoring tools such as digital data loggers and IoT sensors. These devices transmit data to a centralized cold chain software, eliminating the need for manual logs and ensuring FDA-ready reports.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">What is an example of a cold chain technology?</summary>
+								<div class="faq__answer">
+									<p>A primary example of cold chain technology is a cloud-based cold chain system that integrates MQTT-enabled sensors with automated reporting software to maintain 24/7 visibility and meet FSMA food safety requirements.</p>
+								</div>
+							</details>
+						</div>
+						<h3 class="faq__subtitle h3">
+							About Innosk Solution
+						</h3>
+						<div class="faq__questions">
+							<details class="faq__item">
+								<summary class="faq__question">How does your remote temperature monitoring help with FDA compliance?</summary>
+								<div class="faq__answer">
+									<p>Innosk provides a real-time FDA compliance dashboard that automates temperature logs, eliminating manual errors and ensuring your cold chain monitoring is audit-ready 24/7.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">Is this software compatible with FSMA compliance requirements?</summary>
+								<div class="faq__answer">
+									<p>Yes, our FSMA compliance software is specifically designed to meet food safety standards, providing automated reports and warehouse temperature mapping for full traceability.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">How do I link my existing sensors to Innosk?</summary>
+								<div class="faq__answer">
+									<p>Innosk is a software-first solution. You can sync your existing compatible sensors to your FDA compliance dashboard in seconds by simply scanning the QR code on your device.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">Does Innosk provide the hardware or just the software?</summary>
+								<div class="faq__answer">
+									<p>We provide the cloud-based monitoring software and compliance dashboard. Our platform is designed to be plug-and-play with your hardware; just scan the QR code to start automating your FSMA temperature logs immediately.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">Is there any manual configuration required for the sensors?</summary>
+								<div class="faq__answer">
+									<p>No. Our 'Scan-to-Sync' technology eliminates manual setup. Once you scan the QR code, your sensors are automatically linked to our cold chain monitoring software, making it 100% plug-and-play.</p>
+								</div>
+							</details>
+
+							<details class="faq__item">
+								<summary class="faq__question">Does Innosk support warehouse temperature mapping?</summary>
+								<div class="faq__answer">
+									<p>Yes, our cold chain software includes features for warehouse temperature mapping to identify hot spots and maintain consistent climate control across large facilities.</p>
+								</div>
+							</details>
+						</div>
+					</div>
+				</section>
+
+				<!-- Landing Footer -->
+				<Footer />
+
+			</div>
+
+			<a 
+				href="#welcome"
+				class="scroll-to-top"
+				id="scrollToTop"
+			>
+				<Image 
+					src={imgArrow}
+					alt="Feature arrow up"
+					quality="max"
+					format="webp"
+					width=16
+				/>
+			</a>
+		</main>
+	</body>
+</html>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+
+		/**
+		 * 
+		 * Common Data
+		 * 
+		 */
+		let thresholdSections: number = 0;
+		let thresholdCardContent: number = 0;
+		const width = window.innerWidth;
+
+		/**
+		 * 
+		 * LandingPage scroll to top
+		 * 
+		 */
+		
+		const hero = document.querySelector("#welcome");
+		const buttonScrollToTop = document.querySelector("#scrollToTop");
+		if(hero && buttonScrollToTop){
+			const observerHero = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if(entry.isIntersecting){
+						buttonScrollToTop.classList.remove('visible');
+					}
+					else{
+						buttonScrollToTop.classList.add('visible');
+					}
+				});
+			}, {
+				threshold: 0
+			});
+			observerHero.observe(hero);
+		}
+
+		/**
+		 * 
+		 * LandingPage sections (without header)
+		 * 
+		 */
+
+		thresholdSections = width < 1024 ? 0.1 : 0.2;
+
+		const sections = document.querySelectorAll(".reveal-section");
+		const observerSections = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+					observerSections.unobserve(entry.target); // solo anima una vez
+				}
+			});
+			
+		}, {
+			threshold: thresholdSections
+		});
+
+		sections.forEach(el => observerSections.observe(el));
+
+
+		/**
+		 * 
+		 * LandingPage nav and sections (include header)
+		 * 
+		 */
+
+		if(width >= 1280){
+			const navLinks = document.querySelectorAll(".nav a");
+			const sectionByNavLink = document.querySelectorAll("header[id], section[id]");
+			const observerNav = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						navLinks.forEach(link => link.classList.remove("active"));
+	
+						const id = entry.target.getAttribute("id");
+						const activeLink = document.querySelector(
+							`.nav a[href$="#${id}"]`
+						);
+						if (activeLink) {
+							activeLink.classList.add("active");
+						}
+					}
+				});
+			}, {
+				threshold: 0.3
+			});
+			sectionByNavLink.forEach(section => observerNav.observe(section as HTMLElement));
+		}
+
+
+		/**
+		 * 
+		 * LandingPage card images
+		 * 
+		 */
+		
+		const revealImages = document.querySelectorAll(".reveal-img");
+		const observerImages = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+					observerImages.unobserve(entry.target); // solo anima una vez
+				}
+			});
+		}, {
+			threshold: 0.9
+		});
+		revealImages.forEach(img => observerImages.observe(img));
+		
+
+		/**
+		 * 
+		 * LandingPage card content
+		 * 
+		 */
+
+		thresholdCardContent = width < 1024 ? 0.4 : 0.9;
+
+		const cardContents = document.querySelectorAll(".reveal-right");
+		const observerCardContents = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if(entry.isIntersecting){
+					entry.target.classList.add("visible");
+					observerCardContents.unobserve(entry.target); // solo anima una vez
+				}
+			});
+		}, {
+			threshold: thresholdCardContent
+		});
+
+		cardContents.forEach(el => observerCardContents.observe(el));
+
+		/**
+		 * 
+		 * Contact Form
+		 * 
+		 */
+		const form = document.getElementById("idContactForm") as HTMLFormElement;
+		form.addEventListener("submit", (event) => {
+			event.preventDefault();
+			window.location.href = "/thank-you";
+		});
+});
+</script>

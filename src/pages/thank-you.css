@@ -1,0 +1,74 @@
+.landing__thankyou{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--neutral-925);
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    margin-top: 60px;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px){
+    .landing__thankyou{
+        margin-top: 0;
+    }
+}
+
+.landing__thankyou-content{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 2rem;
+}
+
+.thankyou-title{
+    color: var(--white);
+    max-width: 700px;
+}
+
+.thankyou-title span{
+    color: var(--pink-400);
+}
+
+.thankyou-description{
+    color: var(--neutral-400);
+}
+
+.thankyou-subtitle{
+    color: var(--white);
+}
+
+.thankyou-whattoexpect{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.thankyou-steps{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.thankyou__step-title{
+    color: var(--pink-300);
+}
+
+.thankyou__step-description{
+    color: var(--neutral-400);
+}
+
+.thankyou__backtohome{
+    width: fit-content;
+    background-color: var(--pink-600);
+    color: var(--white);
+    padding: 0.7rem 1.4rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.thankyou__backtohome:hover{
+    background-color: var(--pink-500);
+}
