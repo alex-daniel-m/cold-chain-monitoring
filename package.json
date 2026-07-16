@@ -1,15 +1,21 @@
 {
-    "name": "cold-chain-monitoring",
-    "type": "module",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "astro": "astro"
-    },
-    "dependencies": {
-        "@astrojs/sitemap": "^3.7.1",
-        "astro": "^5.17.1"
-    }
+  "name": "cold-chain-monitoring",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "bun run build && wrangler dev",
+    "astro": "astro",
+    "deploy": "bun run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "12",
+    "@astrojs/sitemap": "^3.7.1",
+    "astro": "^5.17.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.111.0"
+  }
 }
